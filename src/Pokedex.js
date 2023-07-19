@@ -1,4 +1,5 @@
 import Pokecard from "./Pokecard";
+import './Pokedex.css'
 
 const Pokedex = () => {
     const pokeData = [
@@ -12,11 +13,13 @@ const Pokedex = () => {
         {id:113, name: 'Eevee', type: 'normal', base_experience: 65},
     ]
     return (  
-        <div>
+        <div className="pokedex">
             <h1>Pokedex</h1>
-            {
-                pokeData && pokeData.map((data, i) => <Pokecard key={i} data={data}/>)
-            }
+            <div className="pokedex-pokecardBg">
+                {
+                    pokeData && pokeData.map((data, i) => <Pokecard key={i} data={data}/>)
+                }
+            </div>
         </div>
     );
 }

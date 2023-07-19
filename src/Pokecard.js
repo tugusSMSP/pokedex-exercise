@@ -1,16 +1,10 @@
+import './Pokecard.css'
 const Pokecard = ({data}) => {
-    console.log(data);
-    let id = data.id;
-    // console.log(toString(data.id));
-    for (let i = 0; toString(id).length < 3; i++) {
-        id = "0"+id
-    }
-    // console.log(id);
     return (  
-        <div>
-            <span>{data.name}</span>
+        <div className='pokeCard'>
+            <span className='pokeCard-title'>{data.name}</span>
             <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`} alt={data.name}/>
-            <div>
+            <div className='pokeCard-bottom'>
                 <span>Type: {data.type}</span>
                 <span>Exp: {data.base_experience}</span>
             </div>
